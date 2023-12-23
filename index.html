@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-2xl font-bold mb-4">Versículos Bíblicos</h1>
+      <div class="table-responsive">
+        <button id="addVerse" class="btn btn-outline-primary">
+          Agregar Versículo
+        </button>
+        <table class="table table-bordered   table-striped" style="margin-top:100px">
+          <thead class="table__head">
+            <tr class="winner__table">
+              <th>S/N</th>
+              <th><i class="fa fa-suitcase" aria-hidden="true"></i> Nombre</th>
+              <th><i class="fa fa-archive" aria-hidden="true"></i> Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="versesList">
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div id="verseModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="modalTitle" class="modal-title">Agregar Versiculo</h5>
+              <button onclick="closeModal()" type="button" class="btn-close"  aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="verseId">
+              <input type="text" id="verseName" placeholder="Nombre del versículo" class="form-control">
+            </div>
+            <div class="modal-footer">
+             
+              <button onclick="closeModal()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button onclick="saveVerse()" type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
